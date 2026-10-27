@@ -1,0 +1,111 @@
+.settings-header-bar {
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.settings-header-bar h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+
+.settings-header-bar p {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+  margin-top: 2px;
+}
+
+.settings-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  gap: var(--space-4);
+  color: var(--color-gray-500);
+}
+
+.settings-form {
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.settings-form .section-heading {
+  font-size: var(--text-xl);
+  color: var(--color-gray-900);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--color-gray-200);
+  padding-bottom: var(--space-3);
+}
+
+.settings-form .section-heading svg {
+  color: var(--color-primary);
+}
+
+.settings-grid-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.setting-input-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: var(--space-8);
+  border-bottom: 1px dashed var(--color-gray-200);
+  padding-bottom: var(--space-4);
+}
+
+.setting-input-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.setting-meta-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.setting-key-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-gray-800);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.setting-description {
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+  margin-top: 2px;
+}
+
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--color-gray-200);
+  padding-top: var(--space-6);
+}
+
+.settings-save-btn {
+  font-size: var(--text-base) !important;
+}
+
+@media (max-width: 768px) {
+  .setting-input-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}

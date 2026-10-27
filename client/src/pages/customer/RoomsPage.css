@@ -1,0 +1,297 @@
+/* ═══════════════════════════════════════════════════════════════
+   AJIIS RESORT — Rooms Collection Page (Editorial Luxury Theme)
+   ═══════════════════════════════════════════════════════════════ */
+
+.rooms-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  gap: var(--space-4);
+  color: var(--color-text-muted);
+}
+
+.rooms-hero {
+  position: relative;
+  height: 55vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-dark);
+  text-align: center;
+  color: #ffffff;
+  padding: 0 var(--space-6);
+  overflow: hidden;
+}
+
+.rooms-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=85');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4) contrast(1.1);
+}
+
+.rooms-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(20, 18, 14, 0.65) 0%, rgba(18, 17, 15, 0.9) 100%);
+}
+
+.rooms-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin-top: 40px;
+}
+
+.rooms-hero-tag {
+  font-family: var(--font-sub);
+  font-size: var(--text-2xs);
+  font-weight: 600;
+  color: var(--color-accent-gold-light);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.rooms-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: var(--space-4);
+  color: #ffffff;
+}
+
+.rooms-hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.rooms-list-section {
+  background: var(--color-bg-primary);
+  padding: var(--space-20) 0 var(--space-32);
+}
+
+.rooms-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.rooms-list-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr;
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.rooms-list-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-editorial);
+  border-color: var(--color-accent-gold);
+}
+
+.rooms-list-img-wrap {
+  position: relative;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.rooms-list-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.rooms-list-card:hover .rooms-list-img-wrap img {
+  transform: scale(1.04);
+}
+
+.rooms-list-price-badge {
+  position: absolute;
+  top: var(--space-5);
+  left: var(--space-5);
+  background: rgba(24, 23, 21, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 0.45rem 1rem;
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.rooms-list-price-badge small {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xs);
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.rooms-list-info {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+}
+
+.rooms-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.rooms-list-name {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-text-main);
+  font-weight: 500;
+}
+
+.rooms-list-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--color-bg-warm);
+  color: var(--color-accent-gold-hover);
+  padding: 4px 10px;
+  font-family: var(--font-sub);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.rooms-list-rating .star-icon {
+  color: var(--color-accent-gold-hover);
+}
+
+.rooms-list-desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: #4a463d;
+  line-height: 1.65;
+  margin-bottom: var(--space-6);
+  font-weight: 400;
+}
+
+.rooms-list-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: var(--space-6);
+}
+
+.spec-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: #2b2823;
+  font-weight: 500;
+}
+
+.spec-badge svg {
+  color: var(--color-accent-gold-hover);
+  font-size: 1.05rem;
+}
+
+.rooms-list-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rooms-list-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.rooms-list-amenities-wrap {
+  margin-bottom: var(--space-6);
+}
+
+.rooms-list-section-title {
+  font-family: var(--font-sub);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold-hover);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.rooms-list-amenity-tag {
+  background: var(--color-bg-warm);
+  color: #4a463d;
+  padding: 4px 10px;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.rooms-list-amenity-tag-more {
+  color: var(--color-accent-gold-hover);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 4px 0;
+}
+
+.rooms-list-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: auto;
+}
+
+.view-details-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sub);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-text-main);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.view-details-link:hover {
+  color: var(--color-accent-gold-hover);
+  transform: translateX(3px);
+}
+
+@media (max-width: 900px) {
+  .rooms-list-card {
+    grid-template-columns: 1fr;
+  }
+  .rooms-list-img-wrap {
+    min-height: 260px;
+  }
+}

@@ -1,0 +1,72 @@
+.profile-page {
+  padding-top: 100px;
+  background: var(--color-gray-50);
+  min-height: 100vh;
+  padding-bottom: var(--space-16);
+}
+
+.profile-title {
+  font-size: var(--text-4xl);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-2);
+  text-align: center;
+  font-weight: 700;
+}
+
+.profile-subtitle {
+  color: var(--color-gray-500);
+  text-align: center;
+  margin-bottom: var(--space-8);
+  font-size: var(--text-base);
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.profile-layouts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.profile-card {
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.profile-section-heading {
+  font-size: var(--text-xl);
+  color: var(--color-gray-900);
+  font-weight: 700;
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--color-gray-150);
+  padding-bottom: var(--space-3);
+}
+
+.profile-section-heading svg {
+  color: var(--color-primary);
+  font-size: var(--text-2xl);
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.profile-id-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  align-items: end;
+}
+
+@media (max-width: 768px) {
+  .profile-id-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}

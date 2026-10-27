@@ -1,0 +1,67 @@
+.maintenance-header-bar {
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.maintenance-header-bar h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+
+.maintenance-header-bar p {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+  margin-top: 2px;
+}
+
+.maintenance-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  gap: var(--space-4);
+  color: var(--color-gray-500);
+}
+
+.no-issues-card {
+  padding: var(--space-12);
+  text-align: center;
+  border-radius: var(--radius-xl);
+}
+
+.issue-cat {
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-gray-500);
+}
+
+.issue-desc-text {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+.assigned-tech-name {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 600;
+  color: var(--color-gray-700);
+}
+
+.assigned-tech-name svg {
+  color: var(--color-primary);
+}
+
+.unassigned-tech {
+  color: var(--color-danger);
+  font-weight: 600;
+  font-style: italic;
+}

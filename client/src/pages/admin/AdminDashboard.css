@@ -1,0 +1,199 @@
+.admin-dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: var(--space-4);
+  color: var(--color-gray-500);
+}
+
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.metric-card {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-2xl);
+}
+
+.icon-wrap.users { background: #eff6ff; color: #3b82f6; }
+.icon-wrap.bookings { background: #fdf2f8; color: #ec4899; }
+.icon-wrap.revenue { background: #ecfdf5; color: #10b981; }
+.icon-wrap.complaints { background: #fff7ed; color: #f97316; }
+
+.metric-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-label {
+  font-size: var(--text-xs);
+  color: var(--color-gray-400);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  font-size: var(--text-2xl);
+  color: var(--color-gray-800);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 2px 0;
+}
+
+.metric-sub {
+  font-size: 10px;
+  color: var(--color-gray-500);
+}
+
+/* Double panel charts */
+.dashboard-double-panel {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: var(--space-6);
+}
+
+.chart-panel-card,
+.rooms-overview-panel,
+.audit-panel-card {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: var(--shadow-sm);
+}
+
+.panel-heading {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-6);
+}
+
+.rooms-meter-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.rooms-radial-meter {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 10px solid #3b82f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.meter-percentage {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-gray-800);
+}
+
+.meter-label {
+  font-size: 10px;
+  color: var(--color-gray-400);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.rooms-meter-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.meter-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+}
+
+/* Audit table */
+.audit-table-wrap {
+  overflow-x: auto;
+}
+
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+.audit-table th {
+  background: var(--color-gray-50);
+  padding: var(--space-3) var(--space-4);
+  font-weight: 700;
+  color: var(--color-gray-700);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.audit-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-gray-100);
+  color: var(--color-gray-800);
+  vertical-align: middle;
+}
+
+.operator-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.op-name {
+  font-weight: 700;
+}
+
+.op-role {
+  font-size: 10px;
+  color: var(--color-gray-400);
+}
+
+.ip-addr {
+  font-family: monospace;
+}
+
+@media (max-width: 1200px) {
+  .metrics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dashboard-double-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}

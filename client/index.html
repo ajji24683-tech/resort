@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>AJIIS RESORT | Luxury Suites & Sanctuary</title>
+    <meta name="description" content="Ajiis Resort is more than a destination. It’s your serene hideaway that makes you want to stay a little longer. Luxury suites, wellness, and bespoke hospitality." />
+    
+    <!-- Google Fonts for Lingers.it Luxury Editorial Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Suppress third-party browser extension script noise -->
+    <script>
+      window.addEventListener('error', function (event) {
+        if (event.message && (event.message.includes("reading 'startTime'") || event.message.includes("reportAllChanges"))) {
+          event.stopImmediatePropagation();
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,994 @@
+/* ═══════════════════════════════════════════════════════════════
+   AJIIS RESORT — Home Page Styles (Lingers.it Clean High-Contrast)
+   ═══════════════════════════════════════════════════════════════ */
+
+.home-page {
+  background-color: var(--color-bg-primary);
+  overflow-x: hidden;
+}
+
+/* ─── 1. HERO SECTION (Lingers.it Viewport) ──────────────────── */
+.lingers-hero-viewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 680px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hero-scenic-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-scenic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: brightness(0.92) contrast(1.04);
+}
+
+.hero-soft-vignette {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(180deg, rgba(15, 14, 12, 0.45) 0%, rgba(15, 14, 12, 0.05) 40%, rgba(15, 14, 12, 0.6) 100%),
+    linear-gradient(to right, rgba(15, 14, 12, 0.25) 0%, transparent 40%, rgba(15, 14, 12, 0.15) 100%);
+}
+
+/* ─── Left Floating Social Stack ──────────────────────────── */
+.hero-social-stack {
+  position: absolute;
+  left: var(--space-8);
+  bottom: 140px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.social-circle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(20, 18, 15, 0.65);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.social-circle-btn:hover {
+  background: var(--color-accent-gold);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* ─── Bottom Hero Strip: Booking Widget & Center Text ─────── */
+.hero-bottom-strip {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 var(--space-8) var(--space-8);
+}
+
+/* ─── Lingers 2-Part Floating Booking Bar ─────────────────── */
+.lingers-floating-booking-bar {
+  display: flex;
+  height: 96px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Left: White Date Block */
+.date-block-white {
+  background: #ffffff;
+  color: #1f1d19;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-6);
+  gap: var(--space-5);
+  min-width: 230px;
+  transition: background-color var(--transition-fast);
+}
+
+.date-block-white:hover {
+  background: #faf8f5;
+}
+
+.date-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 80px;
+}
+
+.date-number {
+  font-size: 2.1rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #1f1d19;
+}
+
+.date-month {
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: #5c564b;
+  margin-top: 3px;
+  margin-bottom: 2px;
+}
+
+.calendar-icon {
+  font-size: 0.95rem;
+  color: #766f60;
+}
+
+.date-separator-line {
+  width: 1px;
+  height: 52px;
+  background: rgba(120, 114, 101, 0.25);
+}
+
+/* Right: Stacked Taupe Action Buttons */
+.booking-actions-stacked {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+}
+
+.btn-enquire,
+.btn-book {
+  flex: 1;
+  border: none;
+  color: #ffffff;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter var(--transition-fast), background-color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-enquire {
+  background: #736d5f;
+}
+
+.btn-enquire:hover {
+  background: #5e594d;
+}
+
+.btn-book {
+  background: #b5aba0;
+}
+
+.btn-book:hover {
+  background: #9d9286;
+}
+
+/* ─── Bottom Center Headline ──────────────────────────────── */
+.hero-center-headline {
+  flex: 1;
+  text-align: center;
+  padding-bottom: 18px;
+  padding-right: 180px; /* balances the left booking bar */
+}
+
+.lingers-headline-text {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.2vw, 4.2rem);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: #ffffff;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ─── MODAL: Expanded Check Availability Filter ───────────── */
+.booking-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.booking-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 17, 15, 0.75);
+}
+
+.booking-modal-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-8);
+  border: 1px solid var(--color-border-light);
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.modal-title {
+  font-size: 1.85rem;
+  font-weight: 400;
+  color: var(--color-text-main);
+  margin-top: 4px;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.modal-close-btn:hover {
+  color: var(--color-text-main);
+}
+
+.modal-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.modal-field label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sub);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold-hover);
+  font-weight: 600;
+}
+
+.modal-field input,
+.modal-field select {
+  padding: 0.85rem 1rem;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-main);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.modal-field input:focus,
+.modal-field select:focus {
+  border-color: var(--color-accent-gold);
+  background: #ffffff;
+}
+
+.modal-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-submit-btn {
+  width: 100%;
+}
+
+/* ─── 2. PHILOSOPHY / STORY SECTION (#sanctuary) ─────────────── */
+.philosophy-section {
+  background-color: var(--color-bg-warm);
+  padding: var(--space-32) 0;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.italic-accent {
+  font-style: italic;
+  color: var(--color-accent-gold-hover);
+}
+
+.philosophy-lead {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  color: #2b2823;
+  line-height: 1.75;
+  margin-bottom: var(--space-10);
+  font-weight: 400;
+}
+
+.philosophy-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+
+.pillar-item {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+}
+
+.pillar-num {
+  font-size: 1.8rem;
+  color: var(--color-accent-gold-hover);
+  line-height: 1;
+  width: 32px;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.pillar-content h4 {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: #1f1d19;
+  margin-bottom: var(--space-1);
+}
+
+.pillar-content p {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: #4a463d;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* Image Composition */
+.image-composition {
+  position: relative;
+  padding: var(--space-8);
+}
+
+.img-main-wrap {
+  width: 85%;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.img-main {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.img-main:hover {
+  transform: scale(1.03);
+}
+
+.img-sub-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 55%;
+  border: 4px solid var(--color-bg-warm);
+  box-shadow: var(--shadow-editorial);
+}
+
+.img-sub {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.img-badge {
+  position: absolute;
+  top: -24px;
+  left: -24px;
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-dark);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.img-badge span {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--color-accent-gold);
+}
+
+.img-badge small {
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  opacity: 0.8;
+}
+
+/* ─── 3. SUITES & RESIDENCES SHOWCASE (#suites) ─────────────── */
+.suites-section {
+  background-color: var(--color-bg-primary);
+  padding: var(--space-32) 0;
+}
+
+.suites-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-10);
+}
+
+.suite-editorial-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-white);
+  border-radius: var(--radius-none);
+  overflow: hidden;
+  border: 1px solid rgba(124, 118, 107, 0.18);
+}
+
+.suite-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+}
+
+.suite-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.suite-editorial-card:hover .suite-img {
+  transform: scale(1.05);
+}
+
+.suite-card-tag-overlay {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+}
+
+.suite-category-badge {
+  font-family: var(--font-sub);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.18em;
+  background: rgba(24, 23, 21, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 0.4rem 0.9rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.suite-card-details {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.suite-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.suite-name {
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: #1f1d19;
+}
+
+.suite-price-tag {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.from-label {
+  font-family: var(--font-sub);
+  font-size: var(--text-2xs);
+  color: #6e685c;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.suite-price-tag .amount {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--color-accent-gold-hover);
+}
+
+.per-night {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xs);
+  color: #6e685c;
+}
+
+.suite-description {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: #4a463d;
+  line-height: 1.65;
+  margin-bottom: var(--space-6);
+  font-weight: 400;
+}
+
+.suite-specs-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: var(--space-6);
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: #2b2823;
+  font-weight: 500;
+}
+
+.spec-icon {
+  color: var(--color-accent-gold-hover);
+  font-size: 1.05rem;
+}
+
+.suite-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.suite-discover-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sub);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #1f1d19;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.suite-discover-link:hover {
+  color: var(--color-accent-gold-hover);
+  transform: translateX(3px);
+}
+
+.suites-view-all {
+  text-align: center;
+  margin-top: var(--space-16);
+}
+
+/* ─── 4. THE EXPERIENCES (#experiences) ──────────────────────── */
+.experiences-section {
+  background-color: var(--color-bg-warm);
+  padding: var(--space-32) 0;
+}
+
+.experiences-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.experience-card {
+  background: var(--color-bg-white);
+  border: 1px solid rgba(124, 118, 107, 0.16);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-editorial);
+}
+
+.exp-img-box {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+
+.exp-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.experience-card:hover .exp-img-box img {
+  transform: scale(1.05);
+}
+
+.exp-badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: rgba(24, 23, 21, 0.85);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-sub);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: 500;
+}
+
+.exp-content {
+  padding: var(--space-6);
+}
+
+.exp-title {
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: #1f1d19;
+  margin-bottom: var(--space-2);
+}
+
+.exp-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: #4a463d;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* ─── 5. EDITORIAL QUOTE BANNER ─────────────────────────────── */
+.quote-banner {
+  position: relative;
+  padding: var(--space-32) 0;
+  background-color: var(--color-bg-dark);
+  text-align: center;
+  overflow: hidden;
+}
+
+.quote-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.quote-banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.35) contrast(1.1);
+}
+
+.quote-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(20, 18, 14, 0.75) 0%, rgba(18, 17, 15, 0.95) 100%);
+}
+
+.quote-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.quote-tag {
+  font-size: var(--text-2xs);
+  letter-spacing: 0.3em;
+  color: var(--color-accent-gold-light);
+  display: block;
+  margin-bottom: var(--space-6);
+  font-weight: 600;
+}
+
+.quote-body {
+  font-size: clamp(1.85rem, 3.5vw, 3rem);
+  font-style: italic;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-bottom: var(--space-6);
+}
+
+.quote-author {
+  font-size: var(--text-xs);
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+/* ─── 6. TESTIMONIALS / GUEST VOICES (#testimonials) ─────────── */
+.testimonials-section {
+  background-color: var(--color-bg-primary);
+  padding: var(--space-32) 0;
+}
+
+.testimonials-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.testimonial-editorial-card {
+  padding: var(--space-8);
+  background: var(--color-bg-white);
+  border: 1px solid rgba(124, 118, 107, 0.16);
+  display: flex;
+  flex-direction: column;
+}
+
+.rev-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: var(--space-4);
+}
+
+.star-gold {
+  color: var(--color-accent-gold-hover);
+  font-size: 1.1rem;
+}
+
+.star-muted {
+  color: var(--color-border-light);
+  font-size: 1.1rem;
+}
+
+.rev-quote {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #22201b;
+  margin-bottom: var(--space-8);
+  flex: 1;
+}
+
+.rev-author-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.rev-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-warm);
+  color: var(--color-accent-gold-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+
+.rev-author-name {
+  font-family: var(--font-sub);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1f1d19;
+}
+
+.rev-stay-type {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xs);
+  color: #6e685c;
+}
+
+/* ─── 7. ARRIVAL / FINAL CTA (#contact) ──────────────────────── */
+.arrival-cta-section {
+  padding: var(--space-20) 0 var(--space-32);
+}
+
+.arrival-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border-light);
+  padding: var(--space-16) var(--space-12);
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-xl);
+}
+
+.arrival-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.arrival-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  color: #1f1d19;
+  margin-bottom: var(--space-4);
+}
+
+.arrival-desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: #4a463d;
+  line-height: 1.7;
+  margin-bottom: var(--space-10);
+  font-weight: 400;
+}
+
+.arrival-highlights {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-12);
+  margin-bottom: var(--space-10);
+}
+
+.arr-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: left;
+}
+
+.arr-icon {
+  font-size: 1.5rem;
+  color: var(--color-accent-gold-hover);
+}
+
+.arr-item strong {
+  display: block;
+  font-family: var(--font-sub);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1f1d19;
+}
+
+.arr-item span {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: #5c564b;
+}
+
+.arrival-cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+/* ─── Responsive Media Queries ──────────────────────────────── */
+@media (max-width: 1200px) {
+  .hero-bottom-strip {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: var(--space-6);
+  }
+  .hero-center-headline {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .suites-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experiences-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .lingers-hero-viewport {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 120px;
+  }
+
+  .hero-social-stack {
+    display: none;
+  }
+
+  .hero-bottom-strip {
+    padding: 0 var(--space-4) var(--space-6);
+  }
+
+  .lingers-headline-text {
+    font-size: 1.8rem;
+    white-space: normal;
+  }
+
+  .lingers-floating-booking-bar {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .date-block-white {
+    padding: var(--space-4);
+    justify-content: space-around;
+  }
+
+  .booking-actions-stacked {
+    width: 100%;
+    flex-direction: row;
+    height: 48px;
+  }
+
+  .arrival-card {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .arrival-highlights {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .arrival-cta-btns {
+    flex-direction: column;
+  }
+}

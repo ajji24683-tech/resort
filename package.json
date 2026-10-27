@@ -1,0 +1,15 @@
+{
+  "name": "yashiii-resort",
+  "version": "1.0.0",
+  "description": "YASHIII RESORT Single-Resort Booking & Operations System",
+  "scripts": {
+    "install-all": "npm install --prefix server && npm install --prefix client",
+    "seed": "npm run seed --prefix server",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "npx concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
